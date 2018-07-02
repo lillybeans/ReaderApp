@@ -10,8 +10,11 @@
 		E9A3330620EAAB93004A234F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3330520EAAB93004A234F /* AppDelegate.swift */; };
 		E9A3330820EAAB93004A234F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3330720EAAB93004A234F /* ViewController.swift */; };
 		E9A3330B20EAAB93004A234F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3330920EAAB93004A234F /* Main.storyboard */; };
-		E9A3330D20EAAB93004A234F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A3330C20EAAB93004A234F /* Assets.xcassets */; };
 		E9A3331020EAAB93004A234F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3330E20EAAB93004A234F /* LaunchScreen.storyboard */; };
+		E9A3331820EAB6F1004A234F /* RateBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3331720EAB6F1004A234F /* RateBookViewController.swift */; };
+		E9A3331B20EABC57004A234F /* IBInspectableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3331A20EABC57004A234F /* IBInspectableView.swift */; };
+		E9A3331D20EABCB3004A234F /* IBInspectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3331C20EABCB3004A234F /* IBInspectableButton.swift */; };
+		E9A4FB9820EAD4AE00220AA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A4FB9720EAD4AE00220AA2 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +22,12 @@
 		E9A3330520EAAB93004A234F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9A3330720EAAB93004A234F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E9A3330A20EAAB93004A234F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E9A3330C20EAAB93004A234F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9A3330F20EAAB93004A234F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9A3331120EAAB93004A234F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A3331720EAB6F1004A234F /* RateBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateBookViewController.swift; sourceTree = "<group>"; };
+		E9A3331A20EABC57004A234F /* IBInspectableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBInspectableView.swift; sourceTree = "<group>"; };
+		E9A3331C20EABCB3004A234F /* IBInspectableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBInspectableButton.swift; sourceTree = "<group>"; };
+		E9A4FB9720EAD4AE00220AA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 		E9A332F920EAAB93004A234F = {
 			isa = PBXGroup;
 			children = (
+				E9A4FB9720EAD4AE00220AA2 /* Images.xcassets */,
 				E9A3330420EAAB93004A234F /* Reader */,
 				E9A3330320EAAB93004A234F /* Products */,
 			);
@@ -54,14 +61,24 @@
 		E9A3330420EAAB93004A234F /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				E9A3331920EABC2D004A234F /* IBInspectables */,
 				E9A3330520EAAB93004A234F /* AppDelegate.swift */,
+				E9A3331720EAB6F1004A234F /* RateBookViewController.swift */,
 				E9A3330720EAAB93004A234F /* ViewController.swift */,
 				E9A3330920EAAB93004A234F /* Main.storyboard */,
-				E9A3330C20EAAB93004A234F /* Assets.xcassets */,
 				E9A3330E20EAAB93004A234F /* LaunchScreen.storyboard */,
 				E9A3331120EAAB93004A234F /* Info.plist */,
 			);
 			path = Reader;
+			sourceTree = "<group>";
+		};
+		E9A3331920EABC2D004A234F /* IBInspectables */ = {
+			isa = PBXGroup;
+			children = (
+				E9A3331A20EABC57004A234F /* IBInspectableView.swift */,
+				E9A3331C20EABCB3004A234F /* IBInspectableButton.swift */,
+			);
+			path = IBInspectables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,8 +139,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A4FB9820EAD4AE00220AA2 /* Images.xcassets in Resources */,
 				E9A3331020EAAB93004A234F /* LaunchScreen.storyboard in Resources */,
-				E9A3330D20EAAB93004A234F /* Assets.xcassets in Resources */,
 				E9A3330B20EAAB93004A234F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9A3330820EAAB93004A234F /* ViewController.swift in Sources */,
+				E9A3331820EAB6F1004A234F /* RateBookViewController.swift in Sources */,
+				E9A3331B20EABC57004A234F /* IBInspectableView.swift in Sources */,
 				E9A3330620EAAB93004A234F /* AppDelegate.swift in Sources */,
+				E9A3331D20EABCB3004A234F /* IBInspectableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
