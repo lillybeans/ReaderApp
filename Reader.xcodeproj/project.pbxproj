@@ -44,7 +44,6 @@
 		E9A332F920EAAB93004A234F = {
 			isa = PBXGroup;
 			children = (
-				E9A4FB9720EAD4AE00220AA2 /* Images.xcassets */,
 				E9A3330420EAAB93004A234F /* Reader */,
 				E9A3330320EAAB93004A234F /* Products */,
 			);
@@ -68,6 +67,7 @@
 				E9A3330920EAAB93004A234F /* Main.storyboard */,
 				E9A3330E20EAAB93004A234F /* LaunchScreen.storyboard */,
 				E9A3331120EAAB93004A234F /* Info.plist */,
+				E9A4FB9720EAD4AE00220AA2 /* Images.xcassets */,
 			);
 			path = Reader;
 			sourceTree = "<group>";

@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.bgImageView.alpha = 1
         }) { (true) in
             self.showTitle()
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     }
     
     func showTitle(){
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.titleLabel.alpha = 1
         }) { (true) in
             self.showDesc()
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     }
     
     func showDesc(){
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.descLabel.alpha = 1
         }) { (true) in
             self.showButton()
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     }
     
     func showButton(){
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.1) {
             self.startButton.alpha = 1
         }
     }
