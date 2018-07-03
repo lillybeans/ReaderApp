@@ -16,24 +16,36 @@ class RateBookViewController: UIViewController {
     @IBOutlet weak var card: IBInspectableView!
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookDescription: UILabel!
+    @IBOutlet weak var bookImageView: UIImageView!
+    @IBOutlet weak var thumbImageView: UIImageView!
+    
+    @IBOutlet weak var cardBehind: IBInspectableView!
+    @IBOutlet weak var bookBehindDescription: UILabel!
+    @IBOutlet weak var bookBehindImage: UIImageView!
+    @IBOutlet weak var bookBehindTitle: UILabel!
+    
     var cardOrigin: CGPoint!
     var rotationMultiplier : CGFloat!
     var verticalMultiplier: CGFloat!
+    var opacityMultiplier: CGFloat!
+    
     let verticalTranslation: CGFloat = 100
     var counter : Int = 0
     let titles = ["Broke", "Paper Craft", "Metamorphosis", "You Can't Blend In", "Seven Studies in Pop Piano"]
     let descriptions = ["Book for poor students", "Book for the artsy and creative", "Going through transformations", "When you were born to stand out!", "For Piano Enthusiasts"]
     
-    @IBOutlet weak var bookImageView: UIImageView!
-    @IBOutlet weak var thumbImageView: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         rotationMultiplier = radians(degrees:35) / (view.frame.width/2) //degrees of rotation PER pixel of movement in the x direction
         verticalMultiplier = verticalTranslation/(view.frame.width/2) //vertical translation per pixel of horizontal translation
+        opacityMultiplier = 1/(view.frame.width/2-75) //increase in opacity per pixel of horizontal translation
+        
         cardOrigin = card.center
         // Do any additional setup after loading the view.
         showNextCard()
+        cardBehind.alpha = 0
     }
 
     @IBAction func toggleMenu(_ sender: Any) {
@@ -62,6 +74,7 @@ class RateBookViewController: UIViewController {
         let delta = sender.translation(in: card)
         card.center = CGPoint(x: cardOrigin.x + delta.x, y: cardOrigin.y + abs(delta.x)*verticalMultiplier)
         card.transform = CGAffineTransform(rotationAngle: delta.x*rotationMultiplier)
+        cardBehind.alpha = abs(delta.x*opacityMultiplier)
         
         if delta.x < 0 {
             thumbImageView.image = #imageLiteral(resourceName: "thumbs-down")
@@ -95,6 +108,7 @@ class RateBookViewController: UIViewController {
                     card.center = self.cardOrigin
                     self.thumbImageView.alpha = 0
                     card.transform = .identity
+                    self.cardBehind.alpha = 0
                 }
             }
 
@@ -102,23 +116,32 @@ class RateBookViewController: UIViewController {
     }
     
     func showNextCard(){
-        counter = counter + 1
-        if counter == 6 {
-            counter = 1
-        }
         
         //next book's data
-        bookTitle.text = titles[counter-1]
-        bookDescription.text = descriptions[counter-1]
-        bookImageView.image = UIImage(named:"book\(counter)")
+        bookTitle.text = titles[counter]
+        bookDescription.text = descriptions[counter]
+        bookImageView.image = UIImage(named:"book\(counter+1)")
         
         //reset card
         self.card.center = self.cardOrigin
         self.thumbImageView.alpha = 0
         self.card.transform = .identity
-        UIView.animate(withDuration: 0.2) {
-            self.card.alpha = 1 //fade in
+        self.card.alpha = 1
+  
+
+        //reset next card (card behind)
+        
+        counter = counter + 1 //next image
+        
+        if counter == 5 {
+            counter = 0
         }
+        
+        cardBehind.alpha = 0
+        bookBehindTitle.text = titles[counter]
+        bookBehindDescription.text = descriptions[counter]
+        bookBehindImage.image = UIImage(named:"book\(counter+1)")
+        
     }
     
     func radians(degrees: Double) -> CGFloat{
