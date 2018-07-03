@@ -75,14 +75,14 @@ class RateBookViewController: UIViewController {
         if sender.state == .ended{
             
             //check final position: if within 75 points to left or right margin, continue animating off the screen
-            if card.center.x < 50 {
+            if card.center.x < 75 {
                 UIView.animate(withDuration: 0.3, animations: {
                     card.center = CGPoint(x: card.center.x-300, y: card.center.y+self.verticalTranslation) //add some gravity
                     card.alpha = 0
                 }) { (true) in
                     self.showNextCard()
                 }
-            } else if card.center.x  > (view.frame.width - 50){
+            } else if card.center.x  > (view.frame.width - 75){
                 UIView.animate(withDuration: 0.3, animations: {
                     card.center = CGPoint(x: card.center.x+300, y: card.center.y+self.verticalTranslation) //add some gravity
                     card.alpha = 0
